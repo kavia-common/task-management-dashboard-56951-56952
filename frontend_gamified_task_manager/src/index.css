@@ -10,3 +10,15 @@
 ::selection {
   background: rgba(59, 130, 246, 0.25);
 }
+
+/* Slightly nicer default rendering without fighting Tailwind utilities */
+html,
+body {
+  height: 100%;
+}
+
+/* Improve keyboard focus visibility when not using per-element focus styles */
+:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+}
