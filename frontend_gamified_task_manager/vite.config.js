@@ -5,7 +5,13 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    // Allow running inside containerized environments; port is set via scripts to respect VITE_PORT when present.
-    host: true
+    // Allow running inside containerized environments.
+    host: true,
+    // Windows-safe port configuration:
+    // - Default to 3000 (preview expectation)
+    // - Allow override via VITE_PORT when it's a valid integer
+    port: Number.isFinite(Number(process.env.VITE_PORT))
+      ? Number(process.env.VITE_PORT)
+      : 3000
   }
 });
