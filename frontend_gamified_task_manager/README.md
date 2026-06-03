@@ -9,6 +9,22 @@ npm install
 npm run dev
 ```
 
+## Tests
+
+This project uses **Vitest** + **React Testing Library** for basic automated tests.
+
+### Run tests (CI-like, non-interactive)
+
+```bash
+npm test
+```
+
+### Run tests in watch mode (local dev)
+
+```bash
+npm run test:watch
+```
+
 ## Environment variables
 
 The container provides these variables (via `.env` in this environment):
@@ -22,4 +38,4 @@ The container provides these variables (via `.env` in this environment):
 - `VITE_ENABLE_SOURCE_MAPS`
 - `VITE_PORT`
 
-This step (01.00) only uses `VITE_PORT` for convenience; the rest will be wired in later steps if/when backend integration is needed.
+This app only uses `VITE_PORT` for convenience; the rest will be wired in later steps if/when backend integration is needed.
